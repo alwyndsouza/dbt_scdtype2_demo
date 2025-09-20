@@ -1,0 +1,54 @@
+version: 2
+
+models:
+  - name: dim_customers
+    description: "Dimension model for customers, implemented as a custom SCD Type 2. It tracks historical changes in customer data."
+    columns:
+      - name: customer_id
+        description: "Unique identifier for each customer."
+        data_type: integer
+      - name: customer_name
+        description: "Full name of the customer."
+        data_type: varchar
+      - name: first_name
+        description: "First name of the customer."
+        data_type: varchar
+      - name: last_name
+        description: "Last name of the customer."
+        data_type: varchar
+      - name: email_address
+        description: "Email address of the customer."
+        data_type: varchar
+      - name: phone_number
+        description: "Phone number of the customer."
+        data_type: varchar
+      - name: annual_income
+        description: "Annual income of the customer."
+        data_type: integer
+      - name: city
+        description: "City where the customer resides."
+        data_type: varchar
+      - name: marketing_consent_email
+        description: "Indicates if the customer has consented to email marketing."
+        data_type: varchar
+      - name: marketing_consent_sms
+        description: "Indicates if the customer has consented to SMS marketing."
+        data_type: varchar
+      - name: contact_preference
+        description: "Customer's preferred method of contact."
+        data_type: varchar
+      - name: effective_start_date
+        description: "The date from which the record is effective."
+        data_type: date
+      - name: effective_end_date
+        description: "The date until which the record is effective."
+        data_type: date
+      - name: active_flag
+        description: "A flag to indicate if the record is the currently active one for a customer ('Y' or 'N')."
+        data_type: varchar
+      - name: scd_id
+        description: "Surrogate key for the slowly changing dimension."
+        data_type: varchar
+        tests:
+          - unique
+          - not_null

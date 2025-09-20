@@ -1,0 +1,2 @@
+customer_id,row_id,customer_name,first_name,last_name,email_address,phone_number,annual_income,city,marketing_consent_email,marketing_consent_sms,contact_preference,last_modified_date,operation_type
+1001,1,"John Smith","John","Smith","john@email.com","555-1234",80000,"New York",true,false,"email","2023-01-01","INSERT"
